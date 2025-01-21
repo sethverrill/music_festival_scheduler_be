@@ -7,16 +7,102 @@
           null
         ]
       },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/controllers/api/v1/schedules_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          5,
+          5,
+          null,
+          5,
+          4,
+          2,
+          1,
+          1,
+          null,
+          1,
+          null,
+          2,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/controllers/api/v1/shows_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           1,
           null,
           1,
+          2,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/controllers/api/v1/venues_controller.rb": {
+        "lines": [
+          1,
           1,
           1,
           1,
           null,
-          0,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
           null,
           null
         ]
@@ -36,8 +122,17 @@
           null
         ]
       },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/models/schedule_show.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/models/schedule.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
@@ -50,7 +145,7 @@
           1,
           1,
           1,
-          null,
+          1,
           1,
           null
         ]
@@ -67,6 +162,64 @@
         "lines": [
           1,
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/serializers/schedule_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          3,
+          null,
+          24,
+          32,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/serializers/show_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/serializers/venue_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/serializers/artist_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
           1,
           null
         ]
@@ -88,6 +241,6 @@
         ]
       }
     },
-    "timestamp": 1737489469
+    "timestamp": 1737497973
   }
 }
