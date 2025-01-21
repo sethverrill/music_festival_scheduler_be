@@ -40,6 +40,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "pry-rails"
+  gem "fuubar"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
@@ -57,4 +58,5 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "database_cleaner-active_record"
+  gem "simplecov", require: false
 end
