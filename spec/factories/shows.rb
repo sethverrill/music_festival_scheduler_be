@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :show do
     time_slot { rand(1..8) }
-    schedule { nil }
-    venue { association :venue }
-    artist { association :artist }
+    venue
+    artist
   end
 end

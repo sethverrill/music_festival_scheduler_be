@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_21_212626) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_21_215212) do
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -35,13 +35,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_21_212626) do
 
   create_table "shows", force: :cascade do |t|
     t.integer "time_slot"
-    t.integer "schedule_id", null: false
     t.integer "venue_id", null: false
     t.integer "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_shows_on_artist_id"
-    t.index ["schedule_id"], name: "index_shows_on_schedule_id"
     t.index ["venue_id"], name: "index_shows_on_venue_id"
   end
 
@@ -63,6 +61,5 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_21_212626) do
   add_foreign_key "schedule_shows", "shows"
   add_foreign_key "schedules", "users"
   add_foreign_key "shows", "artists"
-  add_foreign_key "shows", "schedules"
   add_foreign_key "shows", "venues"
 end
