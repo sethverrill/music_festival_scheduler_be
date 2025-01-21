@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :schedule do
-    user { nil }
+    user { association :user }
   end
 end
