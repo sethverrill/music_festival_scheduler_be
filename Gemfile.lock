@@ -103,6 +103,8 @@ GEM
     factory_bot_rails (6.4.4)
       factory_bot (~> 6.5)
       railties (>= 5.0.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     fuubar (2.5.1)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -269,6 +271,8 @@ GEM
       rubocop-rails
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
+    shoulda-matchers (6.4.0)
+      activesupport (>= 5.2.0)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -333,6 +337,7 @@ DEPENDENCIES
   database_cleaner-active_record
   debug
   factory_bot_rails
+  faker
   fuubar
   importmap-rails
   jbuilder
@@ -342,6 +347,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   rubocop-rails-omakase
+  shoulda-matchers
   simplecov
   sprockets-rails
   sqlite3 (>= 1.4)
