@@ -42,7 +42,6 @@ RSpec.describe Api::V1::SchedulesController, type: :controller do
     
       it 'adds a show to the schedule' do
         patch :update, params: { user_id: user.id, show_id: show.id, action_type: 'add' }
-        parsed_response = JSON.parse(response.body, symbolize_names: true)
     
         expect(response).to have_http_status(:ok)
         expect(schedule.shows).to include(show)
@@ -54,7 +53,6 @@ RSpec.describe Api::V1::SchedulesController, type: :controller do
     
       it 'removes the show from the schedule' do
         patch :update, params: { user_id: user.id, show_id: show.id, action_type: 'remove' }
-        parsed_response = JSON.parse(response.body, symbolize_names: true)
     
         expect(response).to have_http_status(:ok)
         expect(schedule.shows).not_to include(show)
@@ -83,6 +81,16 @@ RSpec.describe Api::V1::SchedulesController, type: :controller do
 
         expect(response).to have_http_status(:not_found)
         expect(parsed_response[:error]).to eq('Schedule or Show not found')
+      end
+    end
+
+    context 'when the action type is invalid' do
+      it 'returns a 422 error' do
+        patch :update, params: { user_id: schedule.user.id, show_id: show.id, action_type: 'invalid' }
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(parsed_response[:error]).to eq('Invalid action type')
       end
     end
   end
