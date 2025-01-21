@@ -56,56 +56,8 @@
           1,
           null
         ]
-      },
-      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/sethverrill/turing_work/mod3/projects/music-fest-scheduler/music-fest-scheduler-be/music_festival_scheduler_be/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
       }
     },
-    "timestamp": 1737484663
+    "timestamp": 1737485179
   }
 }
