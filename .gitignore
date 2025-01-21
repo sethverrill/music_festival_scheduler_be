@@ -30,7 +30,8 @@
 !/tmp/storage/.keep
 
 /public/assets
-/coverage/assets/** */
+/music_festive_scheduler_be/coverage/assets/**
+
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
