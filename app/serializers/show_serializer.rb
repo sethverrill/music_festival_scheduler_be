@@ -4,10 +4,10 @@ class ShowSerializer
   attributes :id, :time_slot
 
   attribute :artist do |show|
-    { id: show.artist.id, name: show.artist.name }
+    ArtistSerializer.new(show.artist).serializable_hash[:data][:attributes]
   end
 
   attribute :venue do |show|
-    { id: show.venue.id, name: show.venue.name }
+    VenueSerializer.new(show.venue).serializable_hash[:data][:attributes]
   end
 end
