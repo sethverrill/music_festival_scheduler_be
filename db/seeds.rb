@@ -49,12 +49,16 @@ venues.each_with_index do |venue, venue_index|
 
     artist = artists.shift
 
-    schedule = schedules.sample
-    Show.create!(
+    show = Show.create!(
       time_slot: slot,
       venue: venue,
-      artist: artist,
-      schedule: schedule
+      artist: artist
+    )
+
+    schedule = schedules.sample
+    ScheduleShow.create!(
+      schedule: schedule,
+      show: show
     )
 
     filled_slots += 1
