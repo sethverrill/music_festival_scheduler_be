@@ -7,7 +7,7 @@ class ScheduleService
   end
 
   def add_show
-    return { error: "Shecdule cannot have more tha #{MAX_SHOWS} shows", status: :unprocessable_entity } if @schedule.shows.count >= MAX_SHOWS
+    return { error: "Schedule cannot have more than #{MAX_SHOWS} shows", status: :unprocessable_entity } if @schedule.shows.count >= MAX_SHOWS
 
     unless @schedule.shows.include?(@show)
       @schedule.shows << @show
