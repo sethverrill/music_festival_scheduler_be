@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
+  describe '#index' do
+    let!(:users) { create_list(:user, 5) }
+
+    it 'returns all users' do
+      get :index
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to have_http_status(:ok)
+      expect(parsed_response[:data].size).to eq(5)
+    end
+  end
+  
   describe '#show' do
     let(:user) { create(:user) }
     let!(:schedule) { create(:schedule, user: user) }
