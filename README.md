@@ -1,24 +1,47 @@
-# README
+# Music Festival Scheduler - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains the backend Rails API for the Music Festival Scheduler.
 
-Things you may want to cover:
+---
 
-* Ruby version
+### Summary
 
-* System dependencies
+The backend is responsible for managing users, schedules, and shows. It serves as the data layer for the Music Festival Scheduler application, providing RESTful API endpoints for interaction with the frontend.
 
-* Configuration
+---
 
-* Database creation
+### Setup Instructions
 
-* Database initialization
+Install Ruby
+Install Rails
+Clone the repository: https://github.com/sethverrill/music_festival_scheduler_be.git  
+Navigate to the project directory: cd music_festival_scheduler_be.  
+Install dependencies using Bundler: bundle install.  
+Set up the database:  
+- Create the database: rails db:create  
+- Run migrations: rails db:migrate  
+- Seed the database: rails db:seed  
+Start the Rails server: rails s  
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
+### Endpoints
 
-* Deployment instructions
+#### Users:  
+- GET /api/v1/users - Retrieves a list of all users.  
+- GET /api/v1/users/:id - Retrieves a specific user and their details.  
 
-* ...
+#### Schedules:  
+- GET /api/v1/users/:user_id/schedule - Retrieves the schedule for a specific user.  
+- PATCH /api/v1/users/:user_id/schedule - Updates a user’s schedule to add or remove a show.  
+
+#### Shows:  
+- GET /api/v1/shows - Retrieves a list of all shows.  
+- GET /api/v1/shows/:id - Retrieves details about a specific show.  
+- DELETE /api/v1/shows/:id - Deletes a specific show.
+
+---
+
+### Testing
+
+Run the test suite with bundle exec rspec.
