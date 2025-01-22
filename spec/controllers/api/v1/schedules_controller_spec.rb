@@ -4,10 +4,7 @@ RSpec.describe Api::V1::SchedulesController, type: :controller do
   describe '#show' do
     let(:user) { create(:user) }
     let!(:schedule) { create(:schedule, user: user) }
-    let!(:shows) { create_list(:show, 3) }
-    before do
-      shows.each { |show| schedule.shows << show }
-    end
+    let!(:shows) { create_list(:show, 3, schedules: [schedule]) }
 
     context 'GET #show happy path' do
       it 'returns the schedule with shows' do
@@ -15,8 +12,11 @@ RSpec.describe Api::V1::SchedulesController, type: :controller do
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to have_http_status(:ok)
-        expect(parsed_response[:data][:attributes][:id]).to eq(schedule.id)
-        expect(parsed_response[:data][:relationships][:shows][:data].size).to eq(3)
+
+        serialized_shows = parsed_response[:data][:attributes][:shows]
+
+        expect(serialized_shows.size).to eq(3)
+        expect(serialized_shows.map { |show| show[:id].to_i }).to match_array(shows.map(&:id))
       end
     end
 
