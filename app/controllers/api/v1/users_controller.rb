@@ -1,5 +1,10 @@
 class Api::V1::UsersController < ApplicationController
 
+  def index
+    users = User.all 
+    render json: UserSerializer.new(users).serializable_hash.to_json
+  end
+
   def show 
     user = User.includes(:schedule).find(params[:id])
     puts user.schedule.inspect
