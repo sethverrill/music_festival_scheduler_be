@@ -2,10 +2,11 @@ class Api::V1::SchedulesController < ApplicationController
 
   def show 
     schedule = Schedule.find_by(user_id: params[:user_id])
+
     if schedule 
-      render json: ScheduleSerializer.new(schedule).serializable_hash.to_json
+      render_schedule(schedule, :ok)
     else
-      render json: { error: "Schedule not found" }, status: :not_found
+      render_error("Schedule not found", :not_found)
     end
   end
 
@@ -14,21 +15,32 @@ class Api::V1::SchedulesController < ApplicationController
     show = Show.find_by(id: params[:show_id])
 
     if schedule && show
-      if params[:action_type] == 'add'
-        if schedule.shows.count < 8
-          schedule.shows << show unless schedule.shows.include?(show)
-          render json: ScheduleSerializer.new(schedule).serializable_hash.to_json, status: :ok
-        else
-          render json: { error: 'Schedule cannot have more than 8 shows' }, status: :unprocessable_entity
-        end
-      elsif params[:action_type] == 'remove'
-        schedule.shows.delete(show)
-        render json: ScheduleSerializer.new(schedule).serializable_hash.to_json, status: :ok
+      service = ScheduleService.new(schedule, show)
+      result = case params[:action_type]
+              when "add"
+                service.add_show
+              when "remove"
+                service.remove_show
+              else
+                { error: "Invalid action type", status: :unprocessable_entity }
+              end
+      if result[:schedule]
+        render_schedule(result[:schedule], result[:status])
       else
-        render json: { error: 'Invalid action type' }, status: :unprocessable_entity
+        render_error(result[:error], result[:status])
       end
     else
-      render json: { error: 'Schedule or Show not found' }, status: :not_found
+      render_error("Schedule or Show not found", :not_found)        
     end
+  end
+
+  private
+
+  def render_schedule(schedule, status)
+    render json: ScheduleSerializer.new(schedule).serializable_hash.to_json, status: status
+  end
+
+  def render_error(message, status)
+    render json: { error: message }, status: status
   end
 end
